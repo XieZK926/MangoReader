@@ -80,8 +80,8 @@ extension XBNetWorkAPI: TargetType, CachePolicyGettable {
         case .getAppId:
             urlStr = "http://118.31.169.165/index/Ad/index.html?packageName=com.xb.MangoReader&versionCode=1"
         }
-        
-        return URL(string: urlStr)!
+        let querryStr = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        return URL(string: querryStr)!
 
     }
     

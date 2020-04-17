@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookDetailViewController" customModule="MangoReader" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookDetailViewController" customModule="青芒果小说" customModuleProvider="target">
             <connections>
                 <outlet property="BookImage" destination="fhV-0a-U5k" id="qaB-8U-dJm"/>
                 <outlet property="addShelfBtn" destination="Nq0-0P-FFF" id="Lzh-tb-rMK"/>
@@ -202,7 +202,7 @@
                                                 <fragment content="简简介">
                                                     <attributes>
                                                         <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" metaFont="cellTitle"/>
+                                                        <font key="NSFont" metaFont="label" size="12"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="5" paragraphSpacingBefore="7" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -444,14 +444,14 @@
                                 <action selector="downloadBook:" destination="-1" eventType="touchUpInside" id="T1p-2z-1RQ"/>
                             </connections>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk8-43-XNK" customClass="XKGradientButton" customModule="MangoReader" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk8-43-XNK" customClass="XKGradientButton" customModule="青芒果小说" customModuleProvider="target">
                             <rect key="frame" x="73.5" y="9" width="274.5" height="34"/>
                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="34" id="HGm-km-Tkv"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="免费阅读全本"/>
+                            <state key="normal" title="立即阅读全本"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="17"/>
