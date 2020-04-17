@@ -1,0 +1,153 @@
+//
+//  UIPlaceHolderTextView.m
+//  Coding_iOS
+//
+//  Created by 王 原闯 on 14-9-9.
+//  Copyright (c) 2014年 Coding. All rights reserved.
+//
+
+#import "UIPlaceHolderTextView.h"
+static NSString *const UILimitLabelColorHexString = @"#666666";
+
+@interface UIPlaceHolderTextView ()
+@property (nonatomic, strong) UILabel *placeHolderLabel;
+@property (nonatomic, strong) UILabel *limitLabel;
+@end
+
+@implementation UIPlaceHolderTextView
+
+CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+#if __has_feature(objc_arc)
+#else
+    [_placeHolderLabel release]; _placeHolderLabel = nil;
+    [_placeholderColor release]; _placeholderColor = nil;
+    [_placeholder release]; _placeholder = nil;
+    [super dealloc];
+#endif
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    // Use Interface Builder User Defined Runtime Attributes to set
+    // placeholder and placeholderColor in Interface Builder.
+    if (!self.placeholder) {
+        _placeholder = @"";
+    }
+    
+    if (!self.placeholderColor) {
+        [self setPlaceholderColor:[UIColor lightGrayColor]];
+    }
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:nil];
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    if( (self = [super initWithFrame:frame]) )
+    {
+        _placeholder = @"";
+        [self setPlaceholderColor:[UIColor lightGrayColor]];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:nil];
+    }
+    return self;
+}
+
+- (void)textChanged:(NSNotification *)notification
+{
+    if (self.limitWordCount) {
+        if ([self text].length <= _limitWordCount) {
+            self.limitLabel.text = [NSString stringWithFormat:@"%lu/%li",(unsigned long)[self text].length,(long)_limitWordCount];
+        } else {
+//            [ showSVProgressWithStatus:@"超出最大字数限制"];
+        }
+    }
+    
+    if([[self placeholder] length] == 0)
+    {
+        return;
+    }
+    
+    [UIView animateWithDuration:UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION animations:^{
+        if([[self text] length] == 0)
+        {
+            [[self viewWithTag:999] setAlpha:1];
+        }
+        else
+        {
+            [[self viewWithTag:999] setAlpha:0];
+        }
+    }];
+    
+    
+}
+
+- (void)setText:(NSString *)text {
+    [super setText:text];
+    [self textChanged:nil];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    if( [[self placeholder] length] > 0 )
+    {
+        UIEdgeInsets insets = self.textContainerInset;
+        if (_placeHolderLabel == nil )
+        {
+            
+            _placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(insets.left+5,insets.top,self.bounds.size.width - (insets.left +insets.right+10),1.0)];
+            _placeHolderLabel.numberOfLines = 0;
+            _placeHolderLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            _placeHolderLabel.font = self.font;
+            _placeHolderLabel.backgroundColor = [UIColor clearColor];
+            _placeHolderLabel.textColor = self.placeholderColor;
+            _placeHolderLabel.alpha = 0;
+            _placeHolderLabel.tag = 999;
+            [self addSubview:_placeHolderLabel];
+        }
+        _placeHolderLabel.text = self.placeholder;
+        [_placeHolderLabel sizeToFit];
+        [_placeHolderLabel setFrame:CGRectMake(insets.left+5,insets.top,self.bounds.size.width - (insets.left +insets.right+10),CGRectGetHeight(_placeHolderLabel.frame))];
+        [self sendSubviewToBack:_placeHolderLabel];
+    }
+    
+    if( [[self text] length] == 0 && [[self placeholder] length] > 0 )
+    {
+        [[self viewWithTag:999] setAlpha:1];
+    }
+    
+    if (self.limitWordCount > 0) {
+        self.textContainerInset = UIEdgeInsetsMake(0, 0, 20, 0);
+        
+        _limitLabel = [[UILabel alloc] initWithFrame:CGRectMake( CGRectGetWidth(self.bounds) - 5 - 100 , CGRectGetHeight(self.bounds) - 22, 100, 20)];
+        _limitLabel.textAlignment = NSTextAlignmentRight;
+        _limitLabel.font = self.font;
+        _limitLabel.textColor = self.placeholderColor;
+        _limitLabel.alpha = 1;
+        _limitLabel.tag = 1000;
+        [self addSubview:_limitLabel];
+        [self bringSubviewToFront:_limitLabel];
+    }
+    
+    if( self.limitWordCount > 0 )
+    {
+        [[self viewWithTag:1000] setAlpha:1];
+    }
+    
+    [super drawRect:rect];
+}
+- (void)setPlaceholder:(NSString *)placeholder{
+    if (_placeholder != placeholder) {
+        _placeholder = placeholder;
+        [self setNeedsDisplay];
+    }
+    
+}
+
+@end

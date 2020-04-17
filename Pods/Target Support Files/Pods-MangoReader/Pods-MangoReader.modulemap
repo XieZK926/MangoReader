@@ -1,0 +1,6 @@
+framework module Pods_MangoReader {
+  umbrella header "Pods-MangoReader-umbrella.h"
+
+  export *
+  module * { export * }
+}

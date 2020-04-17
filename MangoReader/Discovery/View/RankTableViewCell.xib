@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RankTableViewCell" rowHeight="219" id="KGk-i7-Jjw" customClass="RankTableViewCell" customModule="MangoReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vx3-2E-zCn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y5A-xP-gby">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQ9-4U-wtG">
+                        <rect key="frame" x="0.0" y="179" width="320" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkU-bO-maL">
+                                <rect key="frame" x="110" y="11.5" width="100" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-29" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="85" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="查看完整榜单" image="icon_more">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMoreRank:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2aT-3o-KLd"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPP-Nq-2nH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="btO-Xy-byn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hkU-bO-maL" firstAttribute="centerX" secondItem="nQ9-4U-wtG" secondAttribute="centerX" id="LXE-wD-vlT"/>
+                            <constraint firstAttribute="trailing" secondItem="JPP-Nq-2nH" secondAttribute="trailing" id="Q2e-0x-AWx"/>
+                            <constraint firstItem="JPP-Nq-2nH" firstAttribute="leading" secondItem="nQ9-4U-wtG" secondAttribute="leading" id="RXs-0l-wIW"/>
+                            <constraint firstAttribute="height" constant="40" id="iFz-s3-Rug"/>
+                            <constraint firstItem="hkU-bO-maL" firstAttribute="centerY" secondItem="nQ9-4U-wtG" secondAttribute="centerY" id="lfU-yw-5WD"/>
+                            <constraint firstItem="JPP-Nq-2nH" firstAttribute="top" secondItem="nQ9-4U-wtG" secondAttribute="top" id="tXb-y9-ECs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vx3-2E-zCn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5ZT-Qd-Lva"/>
+                    <constraint firstAttribute="bottom" secondItem="nQ9-4U-wtG" secondAttribute="bottom" id="5pL-88-z0T"/>
+                    <constraint firstAttribute="trailing" secondItem="nQ9-4U-wtG" secondAttribute="trailing" id="7v3-Gr-D6a"/>
+                    <constraint firstItem="vx3-2E-zCn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KB9-71-odl"/>
+                    <constraint firstItem="nQ9-4U-wtG" firstAttribute="top" secondItem="vx3-2E-zCn" secondAttribute="bottom" id="SsS-9n-wBF"/>
+                    <constraint firstAttribute="trailing" secondItem="vx3-2E-zCn" secondAttribute="trailing" id="nxn-Ez-bIu"/>
+                    <constraint firstItem="nQ9-4U-wtG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pqG-xr-yCT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="vx3-2E-zCn" id="Us5-Jl-02h"/>
+                <outlet property="layout" destination="y5A-xP-gby" id="G3N-Jj-PVI"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="168.41517857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_more" width="14" height="14"/>
+    </resources>
+</document>

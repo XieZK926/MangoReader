@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookRegisterViewController" customModule="MangoReader" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ez-yu-pyI">
+                    <rect key="frame" x="20" y="94" width="374" height="42"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="书籍名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g0v-gv-4f3">
+                            <rect key="frame" x="15" y="1" width="349" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="L9W-To-cIM"/>
+                        <constraint firstAttribute="bottom" secondItem="g0v-gv-4f3" secondAttribute="bottom" constant="1" id="MWW-W7-xs5"/>
+                        <constraint firstItem="g0v-gv-4f3" firstAttribute="top" secondItem="1ez-yu-pyI" secondAttribute="top" constant="1" id="mZ3-RZ-xCO"/>
+                        <constraint firstItem="g0v-gv-4f3" firstAttribute="leading" secondItem="1ez-yu-pyI" secondAttribute="leading" constant="15" id="pZQ-6g-x6u"/>
+                        <constraint firstAttribute="trailing" secondItem="g0v-gv-4f3" secondAttribute="trailing" constant="10" id="xiU-S1-S4n"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="21"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0MN-XS-33F">
+                    <rect key="frame" x="20" y="166" width="374" height="42"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="作者" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yqv-h5-Q37">
+                            <rect key="frame" x="15" y="1" width="349" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Yqv-h5-Q37" secondAttribute="bottom" constant="1" id="Ljm-yO-Ea0"/>
+                        <constraint firstAttribute="trailing" secondItem="Yqv-h5-Q37" secondAttribute="trailing" constant="10" id="Vyj-s3-mye"/>
+                        <constraint firstItem="Yqv-h5-Q37" firstAttribute="top" secondItem="0MN-XS-33F" secondAttribute="top" constant="1" id="dAp-Ng-xXT"/>
+                        <constraint firstAttribute="height" constant="42" id="qu1-0T-kYU"/>
+                        <constraint firstItem="Yqv-h5-Q37" firstAttribute="leading" secondItem="0MN-XS-33F" secondAttribute="leading" constant="15" id="xRa-R3-9tC"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="21"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9q-A2-efT" customClass="XKGradientButton" customModule="MangoReader" customModuleProvider="target">
+                    <rect key="frame" x="20" y="768" width="374" height="44"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="RYy-4x-54f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                    <state key="normal" title="提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="confirm:" destination="-1" eventType="touchUpInside" id="9sH-te-7lM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0MN-XS-33F" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1mb-Nr-NTv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="a9q-A2-efT" secondAttribute="bottom" constant="50" id="2rE-oE-qNf"/>
+                <constraint firstItem="0MN-XS-33F" firstAttribute="top" secondItem="1ez-yu-pyI" secondAttribute="bottom" constant="30" id="55B-CC-r9b"/>
+                <constraint firstItem="a9q-A2-efT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7eT-WK-HzV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0MN-XS-33F" secondAttribute="trailing" constant="20" id="B1j-mL-NjO"/>
+                <constraint firstItem="1ez-yu-pyI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Qyd-TB-kyJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="a9q-A2-efT" secondAttribute="trailing" constant="20" id="Tzj-U2-PKk"/>
+                <constraint firstItem="1ez-yu-pyI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="XGr-bH-j8T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1ez-yu-pyI" secondAttribute="trailing" constant="20" id="hh8-18-DR3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
+        </view>
+    </objects>
+</document>
